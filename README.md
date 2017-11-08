@@ -10,7 +10,7 @@ python setup.py install
 
 # Usage
 
-The classifiers directory contains classifiers implemented as subclasses of keras.models.Model classes. This means that once a densenet.classifier is instantiated, it contains all of the usual methods of keras.models.Model, such as fit, predict, evaluate, summary, etc.
+The classifiers directory contains classifiers implemented as subclasses of `keras.models.Model` classes. This means that once a `densenet.classifier` is instantiated, it contains all of the usual methods of `keras.models.Model`, such as `fit`, `predict`, `evaluate`, `summary`, etc.
 
 Here is an instantiation of the model that matches the original Huang et al. paper, except using a one-dimensional input rather than a two-dimensional input:
 
