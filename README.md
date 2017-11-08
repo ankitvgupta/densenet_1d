@@ -17,10 +17,18 @@ Here is an instantiation of the model that matches the original Huang et al. pap
 ```python
 
 from densenet.classifiers.one_d import DenseNet121
-model = DenseNet121((224, 10), 1000, 5, 3, 4, 2, 2, .5, 7, 2, 10, 3, 2)
+model = DenseNet121(input_shape=(224, 13))
 print(model.summary())
 ```
 Upon running those lines, you should see an extensive summary indicating the layers in the model.
+
+Note that the DenseNet implementations are highly customizable. For example, say you want to replace the default width-3 convolutions with width-5 ones. Simply instantiate your model as 
+
+```python
+from densenet.classifiers.one_d import DenseNet121
+model = DenseNet121(input_shape=(224, 13), conv_kernel_width=5)
+print(model.summary())
+```
 
 # References
 
