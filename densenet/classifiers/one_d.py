@@ -31,18 +31,18 @@ class DenseNet121(keras.models.Model):
     def __init__(
             self,
             input_shape,
-            num_outputs,
-            k,
-            conv_kernel_width,
-            bottleneck_size,
-            transition_pool_size,
-            transition_pool_stride,
-            theta,
-            initial_conv_width,
-            initial_stride,
-            initial_filters,
-            initial_pool_width,
-            initial_pool_stride):
+            num_outputs=1000,
+            k=32,
+            conv_kernel_width=3,
+            bottleneck_size=4,
+            transition_pool_size=2,
+            transition_pool_stride=2,
+            theta=0.5,
+            initial_conv_width=7,
+            initial_stride=2,
+            initial_filters=64,
+            initial_pool_width=3,
+            initial_pool_stride=2):
         model_input = Input(shape=input_shape)
         output = densenet.models.one_d.DenseNet121(
             k,
@@ -80,18 +80,18 @@ class DenseNet169(keras.models.Model):
     def __init__(
             self,
             input_shape,
-            num_outputs,
-            k,
-            conv_kernel_width,
-            bottleneck_size,
-            transition_pool_size,
-            transition_pool_stride,
-            theta,
-            initial_conv_width,
-            initial_stride,
-            initial_filters,
-            initial_pool_width,
-            initial_pool_stride):
+            num_outputs=1000,
+            k=32,
+            conv_kernel_width=3,
+            bottleneck_size=4,
+            transition_pool_size=2,
+            transition_pool_stride=2,
+            theta=0.5,
+            initial_conv_width=7,
+            initial_stride=2,
+            initial_filters=64,
+            initial_pool_width=3,
+            initial_pool_stride=2):
         model_input = Input(shape=input_shape)
         output = densenet.models.one_d.DenseNet169(
             k,
@@ -130,18 +130,18 @@ class DenseNet201(keras.models.Model):
     def __init__(
             self,
             input_shape,
-            num_outputs,
-            k,
-            conv_kernel_width,
-            bottleneck_size,
-            transition_pool_size,
-            transition_pool_stride,
-            theta,
-            initial_conv_width,
-            initial_stride,
-            initial_filters,
-            initial_pool_width,
-            initial_pool_stride):
+            num_outputs=1000,
+            k=32,
+            conv_kernel_width=3,
+            bottleneck_size=4,
+            transition_pool_size=2,
+            transition_pool_stride=2,
+            theta=0.5,
+            initial_conv_width=7,
+            initial_stride=2,
+            initial_filters=64,
+            initial_pool_width=3,
+            initial_pool_stride=2):
         model_input = Input(shape=input_shape)
         output = densenet.models.one_d.DenseNet201(
             k,
@@ -179,18 +179,18 @@ class DenseNet264(keras.models.Model):
     def __init__(
             self,
             input_shape,
-            num_outputs,
-            k,
-            conv_kernel_width,
-            bottleneck_size,
-            transition_pool_size,
-            transition_pool_stride,
-            theta,
-            initial_conv_width,
-            initial_stride,
-            initial_filters,
-            initial_pool_width,
-            initial_pool_stride):
+            num_outputs=1000,
+            k=32,
+            conv_kernel_width=3,
+            bottleneck_size=4,
+            transition_pool_size=2,
+            transition_pool_stride=2,
+            theta=0.5,
+            initial_conv_width=7,
+            initial_stride=2,
+            initial_filters=64,
+            initial_pool_width=3,
+            initial_pool_stride=2):
         model_input = Input(shape=input_shape)
         output = densenet.models.one_d.DenseNet264(
             k,
@@ -229,19 +229,21 @@ class DenseNetCustom(keras.models.Model):
     def __init__(
             self,
             input_shape,
-            num_outputs,
-            k,
-            block_sizes,
-            conv_kernel_width,
-            bottleneck_size,
-            transition_pool_size,
-            transition_pool_stride,
-            theta,
-            initial_conv_width,
-            initial_stride,
-            initial_filters,
-            initial_pool_width,
-            initial_pool_stride):
+            num_outputs=1000,
+            k=32,
+            block_sizes=None,
+            conv_kernel_width=3,
+            bottleneck_size=4,
+            transition_pool_size=2,
+            transition_pool_stride=2,
+            theta=0.5,
+            initial_conv_width=7,
+            initial_stride=2,
+            initial_filters=64,
+            initial_pool_width=3,
+            initial_pool_stride=2):
+    	if not block_sizes:
+    		raise ValueError("block_sizes must be specified")
         model_input = Input(shape=input_shape)
         output = densenet.models.one_d.DenseNet(
             k,

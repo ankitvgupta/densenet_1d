@@ -152,9 +152,19 @@ def DenseNet201(
         initial_pool_stride,
         use_global_pooling)
 
-
-def DenseNet264
-(k, conv_kernel_width, bottleneck_size, transition_pool_size, transition_pool_stride, theta, initial_conv_width, initial_stride, initial_filters, initial_pool_width, initial_pool_stride, use_global_pooling):
+def DenseNet264(
+        k, 
+        conv_kernel_width, 
+        bottleneck_size, 
+        transition_pool_size, 
+        transition_pool_stride, 
+        theta, 
+        initial_conv_width, 
+        initial_stride, 
+        initial_filters, 
+        initial_pool_width, 
+        initial_pool_stride, 
+        use_global_pooling):
     block_sizes = [6, 12, 64, 48]
     return DenseNet(
         k,
