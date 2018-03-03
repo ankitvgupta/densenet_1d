@@ -10,6 +10,7 @@ This module contains helper functions that define the various subcomponents of a
 
 from keras.layers import BatchNormalization, Activation, Conv1D, Concatenate, AveragePooling1D
 
+
 def H_l(k, bottleneck_size, kernel_width):
     """ 
     A single convolutional "layer" as defined by Huang et al. Defined as H_l in the original paper

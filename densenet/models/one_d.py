@@ -9,6 +9,7 @@ This module contains helper functions that define a DenseNet computational graph
 from keras.layers import Conv1D, BatchNormalization, Activation, MaxPooling1D, GlobalAveragePooling1D
 from densenet.blocks.one_d import dense_block, transition_block
 
+
 def DenseNet(
         k,
         block_sizes,
@@ -151,6 +152,7 @@ def DenseNet201(
         initial_pool_width,
         initial_pool_stride,
         use_global_pooling)
+
 
 def DenseNet264(
         k, 
